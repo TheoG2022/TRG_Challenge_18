@@ -23,6 +23,7 @@
 
 ################################################################################
 # Imports
+# from smtplib import _SendErrs
 import streamlit as st
 from dataclasses import dataclass
 from typing import Any, List
@@ -51,6 +52,14 @@ import hashlib
 # `amount` attributes
 # YOUR CODE HERE
 
+@dataclass
+class Record:
+    sender_id: str
+    receiver_id: str
+    amount: float
+
+
+
 
 ################################################################################
 # Step 2:
@@ -68,7 +77,7 @@ class Block:
 
     # @TODO
     # Rename the `data` attribute to `record`, and set the data type to `Record`
-    data: Any
+    data: Record
 
     creator_id: int
     prev_hash: str = "0"
@@ -78,8 +87,8 @@ class Block:
     def hash_block(self):
         sha = hashlib.sha256()
 
-        record = str(self.record).encode()
-        sha.update(record)
+        data = str(self.data).encode()
+        sha.update(data)
 
         creator_id = str(self.creator_id).encode()
         sha.update(creator_id)
@@ -172,13 +181,21 @@ input_data = st.text_input("Block Data")
 # Add an input area where you can get a value for `sender` from the user.
 # YOUR CODE HERE
 
+sender_id = st.text_input("Sender ID")
+
 # @TODO:
 # Add an input area where you can get a value for `receiver` from the user.
-# YOUR CODE HERE
+# YOUR 
+# CODE HERE
+
+receiver_id = st.text_input("Receiver ID")
+
 
 # @TODO:
 # Add an input area where you can get a value for `amount` from the user.
 # YOUR CODE HERE
+
+amount = st.text_input("Amount Transacted")
 
 if st.button("Add Block"):
     prev_block = pychain.chain[-1]
