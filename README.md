@@ -1,7 +1,9 @@
 # TRG_Challenge_18
 
 ![first screenshot]
-(/Users/theo/Desktop/Local_Workspace/TRG_Challenge_18)
+
+Screenshot2.png
 
 ![second screenshot]
-(/Users/theo/Desktop/Local_Workspace/TRG_Challenge_18)
+
+Screenshot2.png
