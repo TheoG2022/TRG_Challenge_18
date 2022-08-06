@@ -2,7 +2,7 @@
 
 ![first screenshot]
 
-Screenshot2.png
+Screenshot1.png
 
 ![second screenshot]
 
